@@ -37,7 +37,7 @@ __all__ = ("get_git_version")
 
 def call_git_describe():
     try:
-        p = Popen(['git', 'describe', '--tags', '--always'],
+        p = Popen(['git', 'describe', '--tags', '--always', '--abbrev=0'],
                   stdout=PIPE, stderr=PIPE)
         p.stderr.close()
         line = p.stdout.readlines()[0]
