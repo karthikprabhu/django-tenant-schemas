@@ -43,7 +43,8 @@ def call_git_describe():
         line = p.stdout.readlines()[0]
         return line.strip().decode('utf-8')
 
-    except:
+    except Exception, e:
+        raise e
         return None
 
 
